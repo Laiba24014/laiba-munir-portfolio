@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiba Munir — AI Engineer & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+:root {
+  --white: #ffffff;
+  --off-white: #f8f7ff;
+  --soft-bg: #f2f0ff;
+  --purple-50: #f5f3ff;
+  --purple-100: #ede9fe;
+  --purple-200: #ddd6fe;
+  --purple-300: #c4b5fd;
+  --purple-400: #a78bfa;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-800: #5b21b6;
+  --purple-900: #4c1d95;
+  --violet: #7c3aed;
+  --violet-deep: #5b21b6;
+  --accent: #a78bfa;
+  --text-dark: #1e1b4b;
+  --text-body: #374151;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --border: rgba(124,58,237,0.12);
+  --border-soft: rgba(124,58,237,0.08);
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 20px rgba(124,58,237,0.08);
+  --card-shadow-hover: 0 12px 48px rgba(124,58,237,0.18);
+  --section-alt: #f8f7ff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text-body);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--purple-50); }
+::-webkit-scrollbar-thumb { background: var(--purple-400); border-radius:3px; }
+
+/* ─── NAV ─── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem 6%;
+  background:rgba(255,255,255,0.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.3s;
+}
+nav.scrolled { padding:0.7rem 6%; box-shadow:0 4px 32px rgba(124,58,237,0.1); }
+.nav-brand {
+  font-family:'DM Serif Display', serif;
+  font-size:1.5rem; color:var(--text-dark);
+  text-decoration:none;
+}
+.nav-brand span { color:var(--violet); }
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a {
+  font-size:0.82rem; font-weight:500; letter-spacing:0.07em;
+  text-transform:uppercase; color:var(--text-muted);
+  text-decoration:none; transition:color 0.2s; position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:1.5px;
+  background:var(--violet); transition:width 0.3s;
+}
+.nav-links a:hover { color:var(--violet); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--violet); color:white !important;
+  padding:0.5rem 1.3rem; border-radius:7px;
+  transition:background 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { background:var(--violet-deep) !important; transform:translateY(-1px); }
+.nav-cta::after { display:none !important; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height:100vh;
+  display:grid; grid-template-columns:1.1fr 0.9fr;
+  align-items:center; gap:4rem;
+  padding:9rem 6% 6rem;
+  background:linear-gradient(135deg, #ffffff 0%, #f8f7ff 50%, #f0ebff 100%);
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; top:-180px; right:-120px;
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 65%);
+  animation:breathe 7s ease-in-out infinite;
+}
+.hero::after {
+  content:''; position:absolute; bottom:-200px; left:-100px;
+  width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 65%);
+  animation:breathe 9s ease-in-out infinite reverse;
+}
+@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+
+.hero-text { position:relative; z-index:2; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--violet); background:var(--purple-100);
+  border:1px solid var(--purple-200);
+  padding:0.45rem 1.1rem; border-radius:30px; margin-bottom:1.8rem;
+  animation:fadeUp 0.7s ease both;
+}
+.hero h1 {
+  font-family:'DM Serif Display', serif;
+  font-size:clamp(3.2rem,5.5vw,5.5rem);
+  font-weight:400; line-height:1.05;
+  color:var(--text-dark); margin-bottom:0.6rem;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 em { font-style:italic; color:var(--violet); }
+.hero-role {
+  font-size:0.98rem; color:var(--violet); font-weight:600;
+  letter-spacing:0.04em; margin-bottom:1.6rem;
+  font-family:'JetBrains Mono', monospace;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-role::before { content:'> '; color:var(--purple-400); }
+.hero-desc {
+  font-size:0.97rem; color:var(--text-body); line-height:1.85;
+  max-width:500px; margin-bottom:1.4rem;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.hero-desc strong { color:var(--violet); font-weight:600; }
+.hero-quote {
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:1rem; color:var(--text-muted);
+  border-left:3px solid var(--purple-300);
+  padding-left:1.2rem; margin-bottom:2.2rem;
+  line-height:1.7;
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.7s 0.5s ease both; }
+.btn-primary {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:var(--violet); color:white;
+  padding:0.9rem 2.1rem; border-radius:8px;
+  font-size:0.85rem; font-weight:600; letter-spacing:0.05em;
+  text-decoration:none; text-transform:uppercase;
+  transition:all 0.3s;
+  box-shadow:0 4px 20px rgba(124,58,237,0.3);
+}
+.btn-primary:hover { background:var(--violet-deep); transform:translateY(-3px); box-shadow:0 10px 36px rgba(124,58,237,0.4); }
+.btn-outline {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  border:1.5px solid var(--border); color:var(--text-muted);
+  padding:0.9rem 2.1rem; border-radius:8px;
+  font-size:0.85rem; font-weight:500; letter-spacing:0.05em;
+  text-decoration:none; text-transform:uppercase;
+  transition:all 0.3s;
+}
+.btn-outline:hover { border-color:var(--violet); color:var(--violet); transform:translateY(-2px); }
+
+/* hero right - stat cards */
+.hero-right { position:relative; z-index:2; animation:fadeLeft 0.9s 0.3s ease both; }
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.stat-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:1.6rem;
+  box-shadow:var(--card-shadow);
+  transition:all 0.3s; position:relative; overflow:hidden;
+}
+.stat-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--violet), var(--accent));
+  opacity:0; transition:opacity 0.3s;
+}
+.stat-card:hover { transform:translateY(-5px); box-shadow:var(--card-shadow-hover); border-color:var(--purple-200); }
+.stat-card:hover::before { opacity:1; }
+.stat-card.wide { grid-column:1/-1; }
+.stat-icon { font-size:1.8rem; color:var(--violet); margin-bottom:0.8rem; }
+.stat-label { font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-light); margin-bottom:0.3rem; }
+.stat-value { font-family:'DM Serif Display',serif; font-size:1.6rem; color:var(--text-dark); }
+.stat-sub { font-size:0.73rem; color:var(--violet); margin-top:0.25rem; font-weight:500; }
+
+/* ─── SECTION BASE ─── */
+section { padding:6rem 6%; }
+.section-header { margin-bottom:3.5rem; }
+.section-tag {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--violet); margin-bottom:0.8rem; font-weight:600;
+}
+.section-tag::before { content:''; display:inline-block; width:18px; height:1.5px; background:var(--violet); }
+.section-title {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,3.5vw,2.8rem); font-weight:400;
+  color:var(--text-dark); line-height:1.2;
+}
+.section-title em { font-style:italic; color:var(--violet); }
+
+/* ─── ABOUT ─── */
+.about-strip {
+  background:var(--section-alt);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+}
+.about-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; align-items:start; }
+.about-text { grid-column:1/3; }
+.about-text p { font-size:0.95rem; line-height:1.9; color:var(--text-body); margin-bottom:1rem; }
+.about-text p strong { color:var(--violet); font-weight:600; }
+.about-langs { display:flex; flex-direction:column; gap:1rem; }
+.lang-item { display:flex; flex-direction:column; gap:0.4rem; }
+.lang-name { font-size:0.82rem; font-weight:500; color:var(--text-dark); display:flex; justify-content:space-between; }
+.lang-name span:last-child { color:var(--violet); font-size:0.75rem; }
+.lang-bar { height:3px; background:var(--purple-100); border-radius:2px; overflow:hidden; }
+.lang-fill { height:100%; background:linear-gradient(90deg,var(--violet),var(--accent)); border-radius:2px; width:0; transition:width 1.2s ease; }
+
+/* ─── SKILLS ─── */
+.skills-section { background:var(--white); }
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+.skill-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:1.8rem;
+  transition:all 0.3s; box-shadow:var(--card-shadow);
+}
+.skill-card:hover { border-color:var(--purple-300); transform:translateY(-4px); box-shadow:var(--card-shadow-hover); }
+.skill-head { display:flex; align-items:center; gap:0.8rem; margin-bottom:1.2rem; }
+.skill-icon { font-size:1.5rem; color:var(--violet); width:38px; }
+.skill-name { font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dark); }
+.skill-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.skill-tag {
+  font-size:0.72rem; font-weight:500;
+  padding:0.3rem 0.75rem; border-radius:20px;
+  border:1px solid var(--purple-200);
+  color:var(--violet); background:var(--purple-50);
+  transition:all 0.2s;
+}
+.skill-tag:hover { background:var(--purple-100); border-color:var(--purple-400); color:var(--violet-deep); }
+
+/* ─── EDUCATION ─── */
+.edu-section { background:var(--section-alt); }
+.edu-timeline { max-width:760px; }
+.edu-item {
+  display:grid; grid-template-columns:140px 1px 1fr;
+  gap:0 2rem; margin-bottom:0; position:relative;
+}
+.edu-item:last-child .edu-line { display:none; }
+.edu-year { font-size:0.73rem; color:var(--violet); font-weight:600; letter-spacing:0.05em; text-align:right; padding-top:4px; }
+.edu-connector { display:flex; flex-direction:column; align-items:center; }
+.edu-dot {
+  width:12px; height:12px; border-radius:50%;
+  background:var(--violet); border:2px solid var(--purple-300);
+  box-shadow:0 0 12px rgba(124,58,237,0.3); flex-shrink:0; margin-top:2px;
+}
+.edu-line { flex:1; width:1px; background:linear-gradient(180deg, var(--purple-300), transparent); min-height:60px; margin-top:4px; }
+.edu-content { padding-bottom:2.5rem; }
+.edu-content h3 { font-size:1rem; font-weight:600; color:var(--text-dark); margin-bottom:0.3rem; }
+.edu-content .inst { font-size:0.85rem; color:var(--violet); font-weight:500; margin-bottom:0.2rem; }
+.edu-content .detail { font-size:0.8rem; color:var(--text-muted); line-height:1.6; }
+
+/* ─── PROJECTS ─── */
+.projects-section { background:var(--white); }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.5rem; }
+.project-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:2rem; position:relative;
+  transition:all 0.35s; overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:var(--card-shadow);
+}
+.project-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--violet), var(--accent)); opacity:0;
+  transition:opacity 0.3s;
+}
+.project-card:hover { border-color:var(--purple-300); transform:translateY(-5px); box-shadow:var(--card-shadow-hover); }
+.project-card:hover::before { opacity:1; }
+.proj-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem; }
+.proj-icon { font-size:2rem; color:var(--violet); }
+.proj-type { font-size:0.63rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--violet); background:var(--purple-100); padding:0.25rem 0.7rem; border-radius:4px; border:1px solid var(--purple-200); font-weight:600; }
+.project-card h3 { font-size:1rem; font-weight:600; color:var(--text-dark); margin-bottom:0.7rem; line-height:1.35; }
+.proj-desc { font-size:0.83rem; color:var(--text-muted); line-height:1.78; margin-bottom:1.2rem; flex:1; }
+.proj-method { margin-bottom:1.2rem; }
+.proj-method-title { font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--violet); margin-bottom:0.5rem; font-weight:700; }
+.proj-method ul { list-style:none; }
+.proj-method ul li { font-size:0.78rem; color:var(--text-muted); padding:0.18rem 0; padding-left:1rem; position:relative; line-height:1.5; }
+.proj-method ul li::before { content:'›'; position:absolute; left:0; color:var(--purple-400); }
+.proj-stack { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.proj-tech { font-size:0.7rem; padding:0.25rem 0.65rem; border-radius:4px; background:var(--purple-50); color:var(--violet); border:1px solid var(--purple-200); font-weight:500; }
+
+/* ─── AI PROJECTS special section ─── */
+.ai-projects-section { background:var(--section-alt); }
+.ai-badge {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:linear-gradient(135deg, var(--violet), var(--accent));
+  color:white; font-size:0.65rem; letter-spacing:0.1em;
+  text-transform:uppercase; padding:0.2rem 0.7rem; border-radius:20px;
+  font-weight:600; margin-bottom:0.5rem;
+}
+.project-card.featured {
+  border-color:var(--purple-200);
+  background:linear-gradient(135deg, #ffffff 0%, #faf8ff 100%);
+}
+.project-card.featured::after {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at top right, rgba(167,139,250,0.06), transparent 60%);
+  pointer-events:none;
+}
+
+/* ─── RESEARCH ─── */
+.research-section { background:var(--white); }
+.research-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.5rem; }
+.research-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:2rem; transition:all 0.3s;
+  box-shadow:var(--card-shadow);
+}
+.research-card:hover { border-color:var(--purple-300); transform:translateY(-4px); box-shadow:var(--card-shadow-hover); }
+.research-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.research-icon-wrap {
+  width:48px; height:48px; border-radius:12px;
+  background:var(--purple-100); border:1px solid var(--purple-200);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; color:var(--violet); flex-shrink:0;
+}
+.research-card h3 { font-size:0.95rem; font-weight:600; color:var(--text-dark); line-height:1.4; }
+.research-card .r-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.78; margin-bottom:1rem; }
+.research-card .r-method { font-size:0.72rem; color:var(--violet); }
+.research-card .r-method strong { color:var(--violet-deep); font-weight:700; }
+
+/* ─── CERTS ─── */
+.cert-section { background:var(--section-alt); }
+.cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+.cert-card {
+  display:flex; align-items:center; gap:1rem;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:12px; padding:1.2rem 1.5rem;
+  transition:all 0.3s; box-shadow:var(--card-shadow);
+}
+.cert-card:hover { border-color:var(--purple-300); transform:translateY(-3px); box-shadow:var(--card-shadow-hover); }
+.cert-icon { font-size:1.5rem; color:var(--violet); flex-shrink:0; }
+.cert-name { font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.15rem; }
+.cert-org { font-size:0.72rem; color:var(--text-muted); }
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background:linear-gradient(135deg, var(--purple-900) 0%, var(--violet-deep) 50%, var(--violet) 100%);
+  color:white; text-align:center;
+}
+.contact-section .section-tag { color:var(--purple-300); }
+.contact-section .section-tag::before { background:var(--purple-300); }
+.contact-section .section-title { color:white; }
+.contact-section .section-title em { color:var(--purple-300); }
+.contact-intro { font-size:0.97rem; color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 3rem; line-height:1.85; }
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; max-width:900px; margin:0 auto; }
+.contact-card {
+  display:flex; align-items:center; gap:1rem;
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px; padding:1.2rem 1.5rem;
+  text-decoration:none; transition:all 0.3s; backdrop-filter:blur(10px);
+}
+.contact-card:hover { background:rgba(255,255,255,0.18); transform:translateY(-3px); }
+.contact-card-icon { font-size:1.4rem; color:var(--purple-300); flex-shrink:0; }
+.contact-card-label { font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:0.2rem; }
+.contact-card-value { font-size:0.82rem; font-weight:500; color:white; text-align:left; }
+
+/* ─── FOOTER ─── */
+footer {
+  background:var(--text-dark);
+  text-align:center; padding:2rem 6%;
+  font-size:0.78rem; color:rgba(255,255,255,0.45); letter-spacing:0.04em;
+}
+footer span { color:var(--purple-400); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeLeft { from{opacity:0;transform:translateX(28px)} to{opacity:1;transform:translateX(0)} }
+.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-left { opacity:0; transform:translateX(-22px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal-left.visible { opacity:1; transform:translateX(0); }
+
+/* Floating shapes */
+.shapes-bg { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.shape {
+  position:absolute; border-radius:50%;
+  background:radial-gradient(circle, rgba(124,58,237,0.06), transparent);
+  animation:floatShape linear infinite;
+}
+@keyframes floatShape {
+  0%   { transform:translateY(100vh) scale(0); opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:0.3; }
+  100% { transform:translateY(-10vh) scale(1.2); opacity:0; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width:900px) {
+  nav { padding:0.8rem 5%; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; padding:7rem 5% 4rem; }
+  .hero-right { display:none; }
+  .about-grid { grid-template-columns:1fr; }
+  .about-text { grid-column:1; }
+  section { padding:4rem 5%; }
+}
+</style>
+</head>
+<body>
+
+<div class="shapes-bg" id="shapesBg"></div>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#" class="nav-brand">Laiba<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#ai-projects">AI Projects</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-badge"><i class="ti ti-map-pin" style="font-size:0.9rem"></i> Lahore, Pakistan · Open to Opportunities</div>
+    <h1>Laiba<br><em>Munir</em></h1>
+    <div class="hero-role">AI Engineer &amp; Researcher</div>
+    <p class="hero-desc">
+      Computer Science professional pursuing MS at ITU Lahore — building <strong>Agentic AI systems</strong>, RAG pipelines, LLM integrations, and intelligent applications that solve real-world problems at scale.
+    </p>
+    <blockquote class="hero-quote">
+      "When research meets engineering, intelligent systems become practical impact."
+    </blockquote>
+    <div class="hero-btns">
+      <a href="#ai-projects" class="btn-primary"><i class="ti ti-brain"></i> View AI Work</a>
+      <a href="#contact" class="btn-outline"><i class="ti ti-send"></i> Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-card wide">
+        <div class="stat-icon"><i class="ti ti-brain"></i></div>
+        <div class="stat-label">Core Focus</div>
+        <div class="stat-value">Agentic AI &amp; LLMs</div>
+        <div class="stat-sub">RAG · HITL · API Integration · NLP</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="ti ti-stack-2"></i></div>
+        <div class="stat-label">Projects</div>
+        <div class="stat-value">18+</div>
+        <div class="stat-sub">AI, Research &amp; Dev</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="ti ti-certificate"></i></div>
+        <div class="stat-label">Certificates</div>
+        <div class="stat-value">6</div>
+        <div class="stat-sub">Google, DigiSkills</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="ti ti-robot"></i></div>
+        <div class="stat-label">AI Systems Built</div>
+        <div class="stat-value">8+</div>
+        <div class="stat-sub">Production-ready</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="ti ti-school"></i></div>
+        <div class="stat-label">Education</div>
+        <div class="stat-value">MS — ITU</div>
+        <div class="stat-sub">Currently Enrolled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about-strip" id="about">
+  <div class="about-grid">
+    <div class="about-text reveal-left">
+      <div class="section-header" style="margin-bottom:1.5rem">
+        <div class="section-tag"><i class="ti ti-user" style="font-size:0.8rem"></i> About Me</div>
+        <h2 class="section-title">Passionate about <em>AI</em> &amp; Innovation</h2>
+      </div>
+      <p>I am a dedicated Computer Science professional currently pursuing my Master's degree at <strong>Information Technology University (ITU), Lahore</strong>. With a strong BS foundation from GCWU, I have developed deep expertise in Agentic AI systems, LLM integration, RAG pipelines, and intelligent application development.</p>
+      <p>My work spans <strong>HITL lecture generation</strong>, AI-powered assessment tools, hallucination-free research systems, and multimodal interview evaluation platforms. I bridge cutting-edge research with production-ready engineering to build systems that genuinely solve problems.</p>
+    </div>
+    <div class="about-langs reveal">
+      <div class="section-tag" style="margin-bottom:1.5rem"><i class="ti ti-language" style="font-size:0.8rem"></i> Languages</div>
+      <div class="lang-item">
+        <div class="lang-name"><span>English</span><span>Professional</span></div>
+        <div class="lang-bar"><div class="lang-fill" data-width="90%"></div></div>
+      </div>
+      <div class="lang-item" style="margin-top:1rem">
+        <div class="lang-name"><span>Urdu</span><span>Native</span></div>
+        <div class="lang-bar"><div class="lang-fill" data-width="100%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section class="skills-section" id="skills">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-cpu" style="font-size:0.8rem"></i> What I Know</div>
+    <h2 class="section-title">Technical <em>Skills</em></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-robot skill-icon"></i><div class="skill-name">Agentic AI &amp; LLMs</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">Agentic AI</span><span class="skill-tag">HITL Systems</span><span class="skill-tag">LLM Integration</span><span class="skill-tag">LangChain</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Anthropic API</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-database skill-icon"></i><div class="skill-name">RAG &amp; Knowledge Systems</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">RAG Pipelines</span><span class="skill-tag">Vector Databases</span><span class="skill-tag">ChromaDB</span><span class="skill-tag">Pinecone</span><span class="skill-tag">Semantic Search</span><span class="skill-tag">Embeddings</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-brain skill-icon"></i><div class="skill-name">AI &amp; Machine Learning</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">Machine Learning</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">NLP</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-api skill-icon"></i><div class="skill-name">API Integration &amp; Backend</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">REST APIs</span><span class="skill-tag">LLM APIs</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">Python</span><span class="skill-tag">Webhooks</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-code skill-icon"></i><div class="skill-name">Programming Languages</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">C#</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span><span class="skill-tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-head"><i class="ti ti-device-mobile skill-icon"></i><div class="skill-name">Full-Stack &amp; Mobile</div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">Flutter</span><span class="skill-tag">Firebase</span><span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">MySQL</span><span class="skill-tag">.NET</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EDUCATION ─── -->
+<section class="edu-section" id="education">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-school" style="font-size:0.8rem"></i> Academic Journey</div>
+    <h2 class="section-title">My <em>Education</em></h2>
+  </div>
+  <div class="edu-timeline">
+    <div class="edu-item reveal">
+      <div class="edu-year">2024–Present</div>
+      <div class="edu-connector"><div class="edu-dot"></div><div class="edu-line"></div></div>
+      <div class="edu-content">
+        <h3>Master of Science — Information Technology</h3>
+        <div class="inst"><i class="ti ti-building-community" style="font-size:0.9rem;margin-right:4px"></i>Information Technology University (ITU), Lahore</div>
+        <div class="detail">Specializing in Agentic AI systems, LLM engineering, RAG architectures, and intelligent application development.</div>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-year">2020–2024</div>
+      <div class="edu-connector"><div class="edu-dot"></div><div class="edu-line"></div></div>
+      <div class="edu-content">
+        <h3>BS (Hons) Computer Science</h3>
+        <div class="inst"><i class="ti ti-building" style="font-size:0.9rem;margin-right:4px"></i>Government College Women University, Lahore</div>
+        <div class="detail">Core coursework in algorithms, software engineering, databases, AI, and mobile computing.</div>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-year">2018–2020</div>
+      <div class="edu-connector"><div class="edu-dot"></div><div class="edu-line"></div></div>
+      <div class="edu-content">
+        <h3>Intermediate — Pre-Engineering (FSc)</h3>
+        <div class="inst"><i class="ti ti-building" style="font-size:0.9rem;margin-right:4px"></i>Punjab College, Lahore</div>
+        <div class="detail">Strong foundation in Mathematics, Physics, and Computer Science.</div>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-year">2016–2018</div>
+      <div class="edu-connector"><div class="edu-dot"></div><div class="edu-line"></div></div>
+      <div class="edu-content">
+        <h3>Secondary School Certificate (Matric)</h3>
+        <div class="inst"><i class="ti ti-building" style="font-size:0.9rem;margin-right:4px"></i>Educational School System, Lahore</div>
+        <div class="detail">Science stream with distinction in Mathematics and Computer Studies.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI PROJECTS (NEW) ─── -->
+<section class="ai-projects-section" id="ai-projects">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-sparkles" style="font-size:0.8rem"></i> Advanced AI Work</div>
+    <h2 class="section-title">AI <em>Systems</em> &amp; Agents</h2>
+  </div>
+  <div class="projects-grid">
+
+    <!-- HITL Lecture Generation -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-chalkboard proj-icon"></i>
+        <span class="proj-type">Agentic AI · HITL</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-star" style="font-size:0.7rem"></i> Agentic System</div>
+      <h3>HITL Agentic Lecture Generation System</h3>
+      <p class="proj-desc">A Human-in-the-Loop AI pipeline that autonomously generates structured educational lectures from topic prompts. The system involves multiple AI agents for content research, outline creation, slide scripting, and quality review — with human checkpoints at critical stages to validate accuracy before final delivery.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Multi-agent pipeline: researcher, writer, reviewer, formatter</li>
+          <li>Human approval gates between each agent stage</li>
+          <li>Dynamic outline generation with topic decomposition</li>
+          <li>Structured lecture output with slides, notes &amp; quiz</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">LangChain</span><span class="proj-tech">OpenAI API</span><span class="proj-tech">HITL</span><span class="proj-tech">Agentic AI</span><span class="proj-tech">Python</span></div>
+    </div>
+
+    <!-- AI Agent Paper Checking -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-file-check proj-icon"></i>
+        <span class="proj-type">AI Agent · Evaluation</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-robot" style="font-size:0.7rem"></i> AI Agent</div>
+      <h3>AI Agent Paper Checking &amp; Marking System</h3>
+      <p class="proj-desc">An intelligent assessment agent that automatically evaluates student answer papers against a provided marking scheme. The agent understands partial credit, semantic equivalence, and subjective answers — providing detailed per-question scoring, feedback annotations, and a final graded report with justification for every mark awarded or deducted.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Semantic answer matching beyond keyword-based checking</li>
+          <li>Per-question scoring with written justification</li>
+          <li>Partial mark allocation for incomplete answers</li>
+          <li>Detailed graded PDF report generation</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">LLM API</span><span class="proj-tech">NLP</span><span class="proj-tech">Python</span><span class="proj-tech">PDF Processing</span><span class="proj-tech">Prompt Engineering</span></div>
+    </div>
+
+    <!-- AI Research Tool -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-search proj-icon"></i>
+        <span class="proj-type">Research Tool · Anti-Hallucination</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-microscope" style="font-size:0.7rem"></i> Research AI</div>
+      <h3>AI Research Tool — Hallucination-Free Deep Research</h3>
+      <p class="proj-desc">A grounded AI research assistant that conducts deep investigation on any user-specified topic without hallucinating. The system retrieves real sources first, synthesizes verified facts, and explicitly cites every claim with its source URL — making it trustworthy for academic and professional use where accuracy is non-negotiable.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Source-first approach: retrieves before generating</li>
+          <li>Every claim cited with verifiable URL reference</li>
+          <li>User-defined research scope and output format</li>
+          <li>Contradiction detection across multiple sources</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">RAG</span><span class="proj-tech">Web Search API</span><span class="proj-tech">LLM</span><span class="proj-tech">Python</span><span class="proj-tech">Citation Engine</span></div>
+    </div>
+
+    <!-- RAG Pakistani History -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-book-2 proj-icon"></i>
+        <span class="proj-type">RAG · Domain LLM</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-database" style="font-size:0.7rem"></i> RAG System</div>
+      <h3>RAG System on Pakistani History</h3>
+      <p class="proj-desc">A Retrieval-Augmented Generation system trained on a curated corpus of Pakistani historical documents, books, and records. Users can ask detailed questions about Pakistani history — from the Independence Movement to modern political events — and receive accurate, grounded answers sourced directly from the knowledge base rather than relying on LLM memorization.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Domain-specific vector database of Pakistani history corpus</li>
+          <li>Multilingual support (Urdu + English queries)</li>
+          <li>Source-referenced answers from indexed documents</li>
+          <li>Chunking and embedding pipeline for historical texts</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">RAG</span><span class="proj-tech">ChromaDB</span><span class="proj-tech">LLM</span><span class="proj-tech">LangChain</span><span class="proj-tech">Urdu NLP</span><span class="proj-tech">Python</span></div>
+    </div>
+
+    <!-- LLM Model Integration -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-puzzle proj-icon"></i>
+        <span class="proj-type">API Integration · LLM</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-plug" style="font-size:0.7rem"></i> LLM Expert</div>
+      <h3>LLM Model Integration &amp; API Expert</h3>
+      <p class="proj-desc">End-to-end integration of multiple Large Language Models (OpenAI GPT, Anthropic Claude, Gemini, Mistral) into production applications. Covers dynamic model switching, system prompt engineering, token management, streaming responses, fallback strategies, and cost optimization across providers — enabling any application to become AI-powered.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Multi-provider LLM wrapper with unified interface</li>
+          <li>Streaming response handling and token tracking</li>
+          <li>Dynamic system prompt templates per use-case</li>
+          <li>Rate limiting, retry logic, and cost monitoring</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">OpenAI API</span><span class="proj-tech">Anthropic API</span><span class="proj-tech">Gemini</span><span class="proj-tech">FastAPI</span><span class="proj-tech">Python</span><span class="proj-tech">Streaming</span></div>
+    </div>
+
+    <!-- AI Avatar Interview System -->
+    <div class="project-card featured reveal">
+      <div class="proj-header">
+        <i class="ti ti-user-circle proj-icon"></i>
+        <span class="proj-type">Multimodal AI · Avatar</span>
+      </div>
+      <div class="ai-badge"><i class="ti ti-star-filled" style="font-size:0.7rem"></i> Flagship Project</div>
+      <h3>AI Avatar Interview System with Real Feedback &amp; Scoring</h3>
+      <p class="proj-desc">A comprehensive AI-powered interview preparation platform that combines Speech-to-Text input, Text-to-Speech avatar responses, and an LLM evaluation engine. The animated avatar conducts realistic job interviews, listens to candidate responses, and provides real-time structured feedback with scoring across communication, technical accuracy, confidence, and completeness metrics.</p>
+      <div class="proj-method">
+        <div class="proj-method-title"><i class="ti ti-sitemap" style="font-size:0.8rem;margin-right:4px"></i> Key Features</div>
+        <ul>
+          <li>Speech-to-Text + Text-to-Speech avatar conversation loop</li>
+          <li>LLM-generated interview questions tailored by job role</li>
+          <li>Real-time answer evaluation with structured scoring rubric</li>
+          <li>Detailed end-of-session report: strengths, weaknesses, score</li>
+        </ul>
+      </div>
+      <div class="proj-stack"><span class="proj-tech">STT/TTS</span><span class="proj-tech">Avatar AI</span><span class="proj-tech">LLM API</span><span class="proj-tech">Python</span><span class="proj-tech">Evaluation Engine</span><span class="proj-tech">WebRTC</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── ACADEMIC PROJECTS ─── -->
+<section class="projects-section" id="projects">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-layout-grid" style="font-size:0.8rem"></i> Academic Work</div>
+    <h2 class="section-title">Software <em>Projects</em></h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-school proj-icon"></i>
+        <span class="proj-type">System Design</span>
+      </div>
+      <h3>Smart University Management System</h3>
+      <p class="proj-desc">Comprehensive university platform handling student registration, course scheduling, faculty management, and academic records with efficient data-driven architecture.</p>
+      <div class="proj-stack"><span class="proj-tech">C++</span><span class="proj-tech">OOP</span><span class="proj-tech">Data Structures</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-books proj-icon"></i>
+        <span class="proj-type">Web Development</span>
+      </div>
+      <h3>Interactive Books Club Website</h3>
+      <p class="proj-desc">Dynamic full-stack web platform for book enthusiasts featuring catalog management, reviews, ratings, and discussion forums with role-based authentication.</p>
+      <div class="proj-stack"><span class="proj-tech">PHP</span><span class="proj-tech">HTML5</span><span class="proj-tech">CSS3</span><span class="proj-tech">JavaScript</span><span class="proj-tech">MySQL</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-building-store proj-icon"></i>
+        <span class="proj-type">Desktop Application</span>
+      </div>
+      <h3>Utility Store Inventory &amp; Billing System</h3>
+      <p class="proj-desc">Desktop POS system with real-time inventory tracking, automated billing, stock alerts, and comprehensive sales reporting dashboards.</p>
+      <div class="proj-stack"><span class="proj-tech">.NET</span><span class="proj-tech">C#</span><span class="proj-tech">SQL Server</span><span class="proj-tech">WinForms</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-coffee proj-icon"></i>
+        <span class="proj-type">Mobile Application</span>
+      </div>
+      <h3>Smart Cafe Ordering Mobile App</h3>
+      <p class="proj-desc">Cross-platform mobile ordering app for cafes — menu browsing, order customization, real-time status tracking — significantly reducing wait times.</p>
+      <div class="proj-stack"><span class="proj-tech">Flutter</span><span class="proj-tech">Dart</span><span class="proj-tech">Firebase</span><span class="proj-tech">BLoC</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-calendar-check proj-icon"></i>
+        <span class="proj-type">Mobile Application</span>
+      </div>
+      <h3>Student Attendance Tracker App</h3>
+      <p class="proj-desc">Automated attendance app with QR-code check-in, analytics, absence alerts to parents, and exportable reports. Cross-platform with Firebase sync.</p>
+      <div class="proj-stack"><span class="proj-tech">Flutter</span><span class="proj-tech">Android</span><span class="proj-tech">Firebase</span><span class="proj-tech">FCM</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <i class="ti ti-credit-card proj-icon"></i>
+        <span class="proj-type">Fintech Application</span>
+      </div>
+      <h3>E-Wallet Payment Application</h3>
+      <p class="proj-desc">Secure digital wallet enabling peer-to-peer transfers, bill payments, and QR-based payments with multi-layer authentication security.</p>
+      <div class="proj-stack"><span class="proj-tech">Flutter</span><span class="proj-tech">Firebase Auth</span><span class="proj-tech">Firestore</span><span class="proj-tech">Hive</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── RESEARCH ─── -->
+<section class="research-section" id="research">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-microscope" style="font-size:0.8rem"></i> Research &amp; Innovation</div>
+    <h2 class="section-title">Research <em>Projects</em></h2>
+  </div>
+  <div class="research-grid">
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-stethoscope"></i></div>
+        <h3>MedAssist AI — Doctor &amp; Hospital Recommendation System</h3>
+      </div>
+      <p class="r-desc">Intelligent healthcare recommendation engine using LLMs and RAG that suggests doctors and hospitals based on patient symptoms, location, and medical history.</p>
+      <div class="r-method"><strong>Tech:</strong> LLM · RAG Pipeline · Vector Database · Python · NLP</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-lock"></i></div>
+        <h3>Zero-Knowledge Proof Decentralized Identity System</h3>
+      </div>
+      <p class="r-desc">Privacy-preserving identity verification using ZKPs on a decentralized blockchain — allowing users to prove attributes without revealing underlying data.</p>
+      <div class="r-method"><strong>Tech:</strong> ZKP · Blockchain · Cryptography · Python · Solidity</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-face-id"></i></div>
+        <h3>AI Deepfake Detection System</h3>
+      </div>
+      <p class="r-desc">VLM-based system detecting AI-generated deepfake media using multi-modal analysis of visual inconsistencies, facial artifacts, and temporal distortions.</p>
+      <div class="r-method"><strong>Tech:</strong> VLM · Computer Vision · PyTorch · OpenCV · CNN</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-brain"></i></div>
+        <h3>AI-Based Brain Tumor Detection using Deep Learning</h3>
+      </div>
+      <p class="r-desc">Deep learning pipeline for automated MRI brain scan analysis classifying and localizing brain tumors with high accuracy, assisting radiologists in early diagnosis.</p>
+      <div class="r-method"><strong>Tech:</strong> CNN · Transfer Learning · TensorFlow · Medical Imaging · Grad-CAM</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-paw"></i></div>
+        <h3>AI Wildlife Detection Distributed System</h3>
+      </div>
+      <p class="r-desc">Distributed computing system for real-time wildlife detection in camera trap footage, enabling large-scale ecological monitoring across multiple edge nodes.</p>
+      <div class="r-method"><strong>Tech:</strong> Deep Learning · YOLOv8 · Distributed Computing · Edge AI · Python</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-cloud-fog"></i></div>
+        <h3>AI-Powered Smog Detection System</h3>
+      </div>
+      <p class="r-desc">ML system analyzing satellite imagery and sensor data to detect, predict, and map smog levels across urban environments with actionable air quality insights.</p>
+      <div class="r-method"><strong>Tech:</strong> ML · Satellite Imagery · Scikit-learn · Time-Series Analysis</div>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-header">
+        <div class="research-icon-wrap"><i class="ti ti-award"></i></div>
+        <h3>AI-Based Scholarship Recommendation Platform</h3>
+      </div>
+      <p class="r-desc">Data-driven recommendation platform matching students with scholarships based on academic profile, financial need, and eligibility using intelligent filtering algorithms.</p>
+      <div class="r-method"><strong>Tech:</strong> Python · Scikit-learn · Pandas · NLP · Collaborative Filtering</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CERTIFICATES ─── -->
+<section class="cert-section" id="certs">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-certificate" style="font-size:0.8rem"></i> Credentials</div>
+    <h2 class="section-title">Certifications &amp; <em>Achievements</em></h2>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card reveal">
+      <i class="ti ti-trophy cert-icon"></i>
+      <div><div class="cert-name">RISE MICCAI Conference</div><div class="cert-org">International AI in Medicine</div></div>
+    </div>
+    <div class="cert-card reveal">
+      <i class="ti ti-brand-google cert-icon"></i>
+      <div><div class="cert-name">Google AI Essentials</div><div class="cert-org">Coursera — Google</div></div>
+    </div>
+    <div class="cert-card reveal">
+      <i class="ti ti-briefcase cert-icon"></i>
+      <div><div class="cert-name">Freelancing</div><div class="cert-org">DigiSkills — PSEB</div></div>
+    </div>
+    <div class="cert-card reveal">
+      <i class="ti ti-headset cert-icon"></i>
+      <div><div class="cert-name">Virtual Assistance</div><div class="cert-org">DigiSkills — PSEB</div></div>
+    </div>
+    <div class="cert-card reveal">
+      <i class="ti ti-palette cert-icon"></i>
+      <div><div class="cert-name">Graphic Designing</div><div class="cert-org">DigiSkills — PSEB</div></div>
+    </div>
+    <div class="cert-card reveal">
+      <i class="ti ti-speakerphone cert-icon"></i>
+      <div><div class="cert-name">Digital Marketing</div><div class="cert-org">DigiSkills — PSEB</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact-section" id="contact">
+  <div class="section-header reveal">
+    <div class="section-tag"><i class="ti ti-send" style="font-size:0.8rem"></i> Let's Connect</div>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+  </div>
+  <p class="contact-intro reveal">Open to AI research collaborations, LLM engineering roles, Agentic AI projects, internships, and exciting career opportunities. Let's build something intelligent together!</p>
+  <div class="contact-grid reveal">
+    <a href="mailto:laibamunir203@gmail.com" class="contact-card">
+      <i class="ti ti-mail contact-card-icon"></i>
+      <div>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">laibamunir203@gmail.com</div>
+      </div>
+    </a>
+    <a href="tel:+923461218757" class="contact-card">
+      <i class="ti ti-phone contact-card-icon"></i>
+      <div>
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-value">+92 346 121 8757</div>
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/in/laiba-munir-488923313/" target="_blank" class="contact-card">
+      <i class="ti ti-brand-linkedin contact-card-icon"></i>
+      <div>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value">laiba-munir-488923313</div>
+      </div>
+    </a>
+    <div class="contact-card">
+      <i class="ti ti-map-pin contact-card-icon"></i>
+      <div>
+        <div class="contact-card-label">Location</div>
+        <div class="contact-card-value">Model Town, Lahore, PK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  Designed &amp; Built by <span>Laiba Munir</span> · Lahore, Pakistan · 2026
+</footer>
+
+<script>
+// Floating shapes bg
+const shapesBg = document.getElementById('shapesBg');
+for(let i=0;i<14;i++){
+  const s=document.createElement('div');
+  s.className='shape';
+  const size=Math.random()*80+30;
+  s.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*25+18}s;animation-delay:${Math.random()*25}s;opacity:${Math.random()*0.3+0.05}`;
+  shapesBg.appendChild(s);
+}
+
+// Nav scroll
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal,.reveal-left');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      const d=e.target.dataset.delay||(i%4)*90;
+      setTimeout(()=>e.target.classList.add('visible'),parseInt(d));
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach((el,i)=>{ el.dataset.delay=(i%5)*80; obs.observe(el); });
+
+// Language bars
+const bars=document.querySelectorAll('.lang-fill');
+const barObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.style.width=e.target.dataset.width; barObs.unobserve(e.target); }
+  });
+},{threshold:0.5});
+bars.forEach(b=>barObs.observe(b));
+
+// Active nav
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a:not(.nav-cta)');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-130) current=s.id; });
+  navLinks.forEach(a=>{ a.style.color=a.getAttribute('href')==='#'+current?'var(--violet)':''; });
+});
+</script>
+</body>
+</html>
