@@ -2,7 +2,7 @@ Laiba Munir — AI Engineer Portfolio
 
 Personal portfolio website of Laiba Munir, AI Engineer with an MS in Information Technology from ITU Lahore.
 
-🔗 Live Site: https://laiba_munir_portfolio(2).github.io/laiba-munir-portfolio/
+🔗 Live Site: https://Laiba24014.github.io/laiba-munir-portfolio/
 
 About
 
